@@ -2,7 +2,7 @@
 
 const InputBox = () => {
     return (
-        <div className="bg-white rounded-lg h-[40%] m-3">
+        <div className="bg-gray-300 rounded-lg h-[35%] w-[90%] sm:w-[95%] m-4">
             InputBox
         </div>
     )
