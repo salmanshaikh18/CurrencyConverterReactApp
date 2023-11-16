@@ -8,7 +8,8 @@ const InputBox = ({
     amount,
     onAmountChange,
     amountDisable = false,
-    onCurrencyChange
+    onCurrencyChange,
+    currencyDisable
 }) => {
 
     const amountInputId = useId()
@@ -33,6 +34,7 @@ const InputBox = ({
                 <select className="bg-gray-100 rounded-lg p-1 w-[70%] border-none outline-none"
                 value={selectCurrency} 
                 onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
+                disabled={currencyDisable}
                 >
                     {currencyOptions.map((currency) => (
                         <option key={currency} value={currency}>
