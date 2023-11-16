@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react"
-
+import {useEffect, useState} from 'react'
 
 const useCurrencyInfo = (currency) => {
 
-  const [data, setData] = useState({})
+    const [data, setData] = useState({})
 
-  const getData = async () => {
-    fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`)
-        .then((response) => console.log(response.json))
-  }
+    useEffect(() => {
+        fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`)
+        .then((response) => response.json())
+        .then((response) => setData(response[currency]))
+    }, [currency])
 
-  useEffect(() => {
-    getData()
-  }, [])
+    console.log(data)
 
+    return data
 }
 
-export default useCurrencyInfo
+export default useCurrencyInfo;
