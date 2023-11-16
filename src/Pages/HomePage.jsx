@@ -37,6 +37,7 @@ const HomePage = () => {
         selectCurrency={from} 
         amount={amount}
         onAmountChange={(amount) => setAmount(amount)}
+        onCurrencyChange={(currency) => setFrom(currency)}
         />
 
         <button className='text-center bg-green-500 p-2 pl-5 pr-5 rounded-lg z-10 m-[-32px] hover:bg-green-800 transition ease-in-out duration-500' onClick={swap}>Swap</button>
@@ -47,6 +48,7 @@ const HomePage = () => {
          selectCurrency={to} 
          amount={convertedAmount} 
          amountDisable
+         onCurrencyChange={(currency) => setTo(currency)}
          />
 
         <div className='flex justify-center items-center m-3 w-[100%]'>
