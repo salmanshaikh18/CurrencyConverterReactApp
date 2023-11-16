@@ -1,3 +1,4 @@
+import { useId } from "react"
 
 
 const InputBox = ({
@@ -9,12 +10,16 @@ const InputBox = ({
     amountDisable = false,
     onCurrencyChange
 }) => {
+
+    const amountInputId = useId()
+
     return (
         <div className="bg-gray-300 rounded-lg h-[35%] w-[100%] mr-5 ml-5 m-4 flex p-2 justify-between items-center">
 
             <div className="flex flex-col text-black w-[50%]">
-                <label htmlFor="">{label}</label>
-                <input className="w-[100%] rounded p-2 border-none outline-none" 
+                <label htmlFor={amountInputId}>{label}</label>
+                <input className="w-[100%] rounded p-2 border-none outline-none"
+                id={amountInputId}
                 type="number" 
                 placeholder="Amount.." 
                 value={amount}
